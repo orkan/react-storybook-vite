@@ -1,35 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import { Button } from "./stories/Button";
+import SwitchTheme from "./components/SwitchTheme";
 
-function App() {
-  const [count, setCount] = useState(0)
+import "./App.css";
+import "./scss/bootstrap.scss";
 
+import logoReact from "./assets/img/logo_react.svg";
+import logoBootstrap from "./assets/img/logo_bootstrap.svg";
+import logoVite from "./assets/img/logo_vite.svg";
+
+export default function App() {
+  const [count, setCount] = useState(0);
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
+    <div className="d-flex flex-column align-items-center">
+      <div className="mb-4 fs-1">
+        <a href="https://reactjs.org">
+          <img alt="React logo" className="logo react spin" src={logoReact} />
         </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
+        {" + "}
+        <a href="https://getbootstrap.com">
+          <img alt="Bootstrap logo" className="logo bootstrap" src={logoBootstrap} />
+        </a>
+        {" + "}
+        <a href="https://vitejs.dev">
+          <img alt="Vite logo" className="logo vite" src={logoVite} />
         </a>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
-}
 
-export default App
+      <h1>React:</h1>
+      <SwitchTheme />
+
+      <h1>Storybook:</h1>
+      <Button
+        label={`Count is ${count}`}
+        backgroundColor={"white"}
+        size={"large"}
+        onClick={() => setCount((count) => count + 1)}
+      />
+
+      <h1>Bootstrap:</h1>
+      <button class="btn btn-primary">Primary button</button>
+    </div>
+  );
+}

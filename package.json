@@ -1,7 +1,7 @@
 {
   "name": "intro-storybook-react-template",
   "version": "0.2.0",
-  "description": "Starter template to get up and running quickly with React and Storybook",
+  "description": "Boilerplate template for the Intro to Storybook tutorial for React",
   "author": "Chromatic <https://chromatic.com/>",
   "type": "module",
   "repository": {
@@ -14,12 +14,18 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "@reduxjs/toolkit": "^1.9.5",
+    "bootstrap": "^5.3.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-bootstrap": "^2.8.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.1.1"
   },
   "scripts": {
-    "dev": "vite",
+    "start": "vite dev",
     "build": "vite build",
+    "prev": "start serve dist/",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
@@ -40,6 +46,7 @@
     "msw": "^1.2.1",
     "msw-storybook-addon": "^1.8.0",
     "prop-types": "^15.8.1",
+    "sass": "^1.64.1",
     "storybook": "^7.0.6",
     "vite": "^4.2.0"
   }
